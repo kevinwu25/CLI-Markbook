@@ -21,6 +21,9 @@ public class Main {
         for (int i = 0; i < classSize; i++) {
             names[i] = input.nextLine();
         }
+	    
+	System.out.print("What year will your class be graduating?");
+        int gradYear = input.nextInt();
 
         Arrays.sort(names);
 
