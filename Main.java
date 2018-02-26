@@ -5,7 +5,8 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
 	    Scanner input = new Scanner(System.in);
-        String names[];
+            // All arrays
+	    String names[];
         int studentNum[];
 
         System.out.print("What's your name? ");
@@ -34,6 +35,6 @@ public class Main {
             }
         }
 
-//        System.out.println("");
+       System.out.println("");
     }
 }
