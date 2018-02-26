@@ -30,7 +30,7 @@ public class Main {
     
             Arrays.sort(names);
   
-            System.out.println("Here's the class list, what are their student numbers? (please input according to alphabetical order)");
+            System.out.println("What are their student numbers?");
             for (int i = 0; i < classSize; i++) {
                 if (i < 10) {
                     System.out.print("0" + (i + 1) + ": " + names[i] + " ");
