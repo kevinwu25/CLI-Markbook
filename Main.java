@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-	    Scanner input = new Scanner(System.in);
+	Scanner input = new Scanner(System.in);
         String names[];
         int studentNum[];
         
@@ -30,7 +30,7 @@ public class Main {
                 names[i] = input.nextLine();
             }
         }
-
+        
         Arrays.sort(names);
 
         System.out.println();
