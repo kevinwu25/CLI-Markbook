@@ -67,7 +67,7 @@ public class Main {
             System.out.println("2 - View class averages");
             System.out.println("3 - View logins");
             System.out.println("4 - Check for at-risk students");
-            System.out.println("5 - Add marks");
+            System.out.println("5 - Add/edit marks");
             System.out.println("6 - Remove students");
             System.out.println("7 - Quit");
             
@@ -84,13 +84,17 @@ public class Main {
                 }
             } else if (choice == 2) {
                 System.out.println();
+                int averageTotal = 0;
                 for (int i = 1; i <= classSize; i++) {
+                    int average = 0;
                     if (i < 10 && i != remove[i]) {
                         System.out.print("0" + i + ": " + names[i] + " ");
                         for (int j = 0; j < numMarks; j ++) {
                             if (j == numMarks - 1) {
-                                System.out.println(marks[i - 1][j]);
+                                average += marks[i - 1][j];
+                                System.out.println(marks[i - 1][j] + " average: " + (average / numMarks));
                             } else {
+                                average += marks[i - 1][j];
                                 System.out.print(marks[i - 1][j] + " ");
                             }
                         }
@@ -98,13 +102,38 @@ public class Main {
                         System.out.print(i + ": " + names[i] + " ");
                         for (int j = 0; j < numMarks; j ++) {
                             if (j == numMarks - 1) {
-                                System.out.println(marks[i - 1][j]);
+                                average += marks[i - 1][j];
+                                System.out.println(marks[i - 1][j] + " average: " + (average / numMarks));
                             } else {
+                                average += marks[i - 1][j];
                                 System.out.print(marks[i - 1][j] + " ");
                             }
                         }
                     }
-                } 
+                    averageTotal += average / numMarks;
+                }
+                System.out.println("Class average: " + (averageTotal / classSize));
+                if (averageTotal / classSize >= 100 && averageTotal / classSize < 420 || averageTotal / classSize > 420) {
+                    System.out.println("I think your students may be cheating.");
+                } else if (averageTotal / classSize < 100 && averageTotal / classSize >= 90) {
+                    System.out.println("Your class is awesome!");
+                } else if (averageTotal / classSize < 90 && averageTotal / classSize >= 80) {
+                    System.out.println("Your class is great!");
+                } else if (averageTotal / classSize < 80 && averageTotal / classSize >= 70) {
+                    System.out.println("Your class is doing okay.");
+                } else if (averageTotal / classSize < 69 && averageTotal / classSize >= 60) {
+                    System.out.println("Your class is struggling.");
+                } else if (averageTotal / classSize < 60 && averageTotal / classSize >= 50) {
+                    System.out.println("Your class is doing awful.");
+                } else if (averageTotal / classSize < 50 && averageTotal / classSize >= 0) {
+                    System.out.println("Your class is full of idiots!");
+                } else if (averageTotal / classSize < 0) {
+                    System.out.println("How is a negative average even possible?");
+                } else if (averageTotal / classSize == 69) {
+                    System.out.println("nice");
+                } else if (averageTotal / classSize == 420) {
+                    System.out.println("blaze it");
+                }
             } else if (choice == 3) {
                 System.out.println();
                 System.out.println("first name, last name, email, password");
@@ -116,16 +145,53 @@ public class Main {
                     } else if (i != remove[i]) {
                         System.out.println(i + ": " + names[i] + " " + email + " " + password);
                     }
-		}
+                }
             } else if (choice == 4) {
-                
+                System.out.println();
+                System.out.println("Students at risk:");
+                int x = 0;
+                for (int i = 1; i <= classSize; i++) {
+                    int average = 0;
+                    int atRisk = 0;
+                    if (i != remove[i]) {
+                        for (int j = 0; j < numMarks; j ++) {
+                            average += marks[i - 1][j];
+                        }
+                        atRisk = average / numMarks;
+                    }
+                    if (i != remove[i] && atRisk <= 65) {
+                        x += 1;
+                    }
+                }
+                if (x == 0) {
+                    System.out.println("Horray! None of your students are at risk, you must be a great teacher :)");
+                }
+                for (int i = 1; i <= classSize; i++) {
+                    int average = 0;
+                    int atRisk = 0;
+                    if (i != remove[i]) {
+                        for (int j = 0; j < numMarks; j ++) {
+                            average += marks[i - 1][j];
+                        }
+                        atRisk = average / numMarks;
+                    }
+                    if (i < 10 && i != remove[i] && atRisk <= 65) {
+                        System.out.println("0" + i + ": " + names[i] + " average: " + atRisk);
+                    } else if (i != remove[i] && atRisk <= 65) {
+                        System.out.println(i + ": " + names[i] + " average: " + atRisk);
+                    }
+                }
             } else if (choice == 5) {
                 System.out.println();
                 System.out.println("Type the 2-digit number of the student who's marks you'd like to enter: ");
                 int student = input.nextInt();
-                System.out.println(names[student] + "'s marks: ");
-                for (int i = 0; i < numMarks; i ++) {
-                    marks[student - 1][i] = input.nextInt();
+                if (student != remove[student]) {
+                    System.out.println(names[student] + "'s marks: ");
+                    for (int i = 0; i < numMarks; i ++) {
+                        marks[student - 1][i] = input.nextInt();
+                    }
+                } else { 
+                    System.out.println(names[student] + " has been removed already. Don't you remember? You silly goose!");
                 }
             } else if (choice == 6) {
                 System.out.println();
