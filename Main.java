@@ -116,8 +116,7 @@ public class Main {
                     } else if (i != remove[i]) {
                         System.out.println(i + ": " + names[i] + " " + email + " " + password);
                     }
-                }
-                
+		}
             } else if (choice == 4) {
                 
             } else if (choice == 5) {
