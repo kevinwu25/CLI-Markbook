@@ -4,10 +4,11 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-	Scanner input = new Scanner(System.in);
+	    Scanner input = new Scanner(System.in);
         String names[];
         int studentNum[];
         int remove[];
+        int minus = 0;
         
         System.out.print("What's your name? ");
         String teacher = input.nextLine();
@@ -25,7 +26,7 @@ public class Main {
         System.out.print("What grade are they in? ");
         int gradYear = 30 - input.nextInt();
 
-        System.out.println("What are their names?");
+        System.out.println("What are their names? (first name, last name)");
         input.nextLine();
         for (int i = 1; i <= classSize; i++) {
             if (i < 10) {
@@ -112,26 +113,27 @@ public class Main {
                     }
                     averageTotal += average / numMarks;
                 }
-                System.out.println("Class average: " + (averageTotal / classSize));
-                if (averageTotal / classSize >= 100 && averageTotal / classSize < 420 || averageTotal / classSize > 420) {
+                int averageFinal = averageTotal / (classSize - minus);
+                System.out.println("Class average: " + averageFinal);
+                if (averageFinal >= 100 && averageFinal < 420 || averageFinal > 420) {
                     System.out.println("I think your students may be cheating.");
-                } else if (averageTotal / classSize < 100 && averageTotal / classSize >= 90) {
+                } else if (averageFinal < 100 && averageFinal >= 90) {
                     System.out.println("Your class is awesome!");
-                } else if (averageTotal / classSize < 90 && averageTotal / classSize >= 80) {
+                } else if (averageFinal < 90 && averageFinal >= 80) {
                     System.out.println("Your class is great!");
-                } else if (averageTotal / classSize < 80 && averageTotal / classSize >= 70) {
+                } else if (averageFinal < 80 && averageFinal >= 70) {
                     System.out.println("Your class is doing okay.");
-                } else if (averageTotal / classSize < 69 && averageTotal / classSize >= 60) {
+                } else if (averageFinal < 69 && averageFinal >= 60) {
                     System.out.println("Your class is struggling.");
-                } else if (averageTotal / classSize < 60 && averageTotal / classSize >= 50) {
+                } else if (averageFinal < 60 && averageFinal >= 50) {
                     System.out.println("Your class is doing awful.");
-                } else if (averageTotal / classSize < 50 && averageTotal / classSize >= 0) {
+                } else if (averageFinal < 50 && averageFinal >= 0) {
                     System.out.println("Your class is full of idiots!");
-                } else if (averageTotal / classSize < 0) {
+                } else if (averageFinal < 0) {
                     System.out.println("How is a negative average even possible?");
-                } else if (averageTotal / classSize == 69) {
+                } else if (averageFinal == 69) {
                     System.out.println("nice");
-                } else if (averageTotal / classSize == 420) {
+                } else if (averageFinal == 420) {
                     System.out.println("blaze it");
                 }
             } else if (choice == 3) {
@@ -183,7 +185,7 @@ public class Main {
                 }
             } else if (choice == 5) {
                 System.out.println();
-                System.out.println("Type the 2-digit number of the student who's marks you'd like to enter: ");
+                System.out.println("Type the 2-digit number of the student who's marks you'd like to e nter: ");
                 int student = input.nextInt();
                 if (student != remove[student]) {
                     System.out.println(names[student] + "'s marks: ");
@@ -207,6 +209,7 @@ public class Main {
                     int delete = input.nextInt();
                     remove[delete] = delete;
                     System.out.println(names[delete] + " has been removed from the class list.");
+                    minus += 1;
                 }
             } else if (choice == 7) {
                 System.out.println("Are you sure you want to quit? Press 1 to quit or 2 to go back to the menu");
