@@ -9,18 +9,22 @@ import java.util.Arrays;
  * ver 1.0
  */
 public class Main {
+    static String names[];
+    static int studentNum[];
+    static int remove[];
+    static int minus = 0;
+    static int gradYear;
+    static int numMarks;
+    static int classSize;
+    static int[][] marks;
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        String names[];
-        int studentNum[];
-        int remove[];
-        int minus = 0;
 
         System.out.print("What's your name? ");
         String teacher = input.nextLine();
 
         System.out.print("Hi " + teacher + ", how many students do you have? ");
-        int classSize = Integer.parseInt(input.nextLine());
+        classSize = Integer.parseInt(input.nextLine());
         names = new String[(classSize + 1)];
         studentNum = new int[classSize + 1];
         remove = new int[classSize + 1];
@@ -30,7 +34,7 @@ public class Main {
         remove[0] = 0;
 
         System.out.print("What grade are they in? ");
-        int gradYear = 30 - input.nextInt();
+        gradYear = 30 - input.nextInt();
 
         System.out.println("What are their names? (first name, last name)");
         input.nextLine();
@@ -61,11 +65,16 @@ public class Main {
 
         System.out.println();
         System.out.print("Finally, how many marks will be submitted in your course? ");
-        int numMarks = input.nextInt();
+        numMarks = input.nextInt();
 
-        int[][] marks = new int[classSize + 1][numMarks];
+        marks = new int[classSize + 1][numMarks];
 
+        running();
+    }
+
+    static void running() {
         boolean menu = true;
+        Scanner input = new Scanner(System.in);
         while (menu) {
             // menu to choose actions
             System.out.println();
@@ -229,9 +238,5 @@ public class Main {
                 System.out.println("error: please select one of the below options");
             }
         }
-    }
-
-    static void running() {
-        
     }
 }
