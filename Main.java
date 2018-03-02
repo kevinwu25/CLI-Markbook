@@ -2,14 +2,20 @@ package com.company;
 import java.util.Scanner;
 import java.util.Arrays;
 
+/**
+ *  This program takes marks and prints them out, as well as allows the teacher to edit the marks and check for student names, numbers, logins and averages.
+ *
+ * Author Mingze Jin
+ * ver 1.0
+ */
 public class Main {
     public static void main(String[] args) {
-	    Scanner input = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
         String names[];
         int studentNum[];
         int remove[];
         int minus = 0;
-        
+
         System.out.print("What's your name? ");
         String teacher = input.nextLine();
 
@@ -18,9 +24,9 @@ public class Main {
         names = new String[(classSize + 1)];
         studentNum = new int[classSize + 1];
         remove = new int[classSize + 1];
-        
+
         names[0] = " ";
-        studentNum[0] = 000;
+        studentNum[0] = 0;
         remove[0] = 0;
 
         System.out.print("What grade are they in? ");
@@ -52,15 +58,15 @@ public class Main {
                 studentNum[i] = input.nextInt();
             }
         }
-        
+
         System.out.println();
         System.out.print("Finally, how many marks will be submitted in your course? ");
         int numMarks = input.nextInt();
-        
+
         int[][] marks = new int[classSize + 1][numMarks];
 
         boolean menu = true;
-        while (menu == true) {
+        while (menu) {
             // menu to choose actions
             System.out.println();
             System.out.println("What would you like to do? (Enter \"1\", \"2\", \"3\"... etc.)");
@@ -71,9 +77,9 @@ public class Main {
             System.out.println("5 - Add/edit marks");
             System.out.println("6 - Remove students");
             System.out.println("7 - Quit");
-            
+
             int choice = input.nextInt();
-            
+
             if (choice == 1) {
                 System.out.println();
                 for (int i = 1; i <= classSize; i++) {
@@ -133,7 +139,7 @@ public class Main {
                     System.out.println("How is a negative average even possible?");
                 } else if (averageFinal == 69) {
                     System.out.println("nice");
-                } else if (averageFinal == 420) {
+                } else {
                     System.out.println("blaze it");
                 }
             } else if (choice == 3) {
@@ -192,7 +198,7 @@ public class Main {
                     for (int i = 0; i < numMarks; i ++) {
                         marks[student - 1][i] = input.nextInt();
                     }
-                } else { 
+                } else {
                     System.out.println(names[student] + " has been removed already. Don't you remember? You silly goose!");
                 }
             } else if (choice == 6) {
@@ -223,5 +229,9 @@ public class Main {
                 System.out.println("error: please select one of the below options");
             }
         }
+    }
+
+    static void running() {
+        
     }
 }
