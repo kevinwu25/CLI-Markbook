@@ -123,6 +123,8 @@ public class Main {
             removeStudents();
         } else if (choiceMenu == 7) {
             quitProgram();
+        } else if (choiceMenu == 8) {
+            easterEgg();
         } else {
             System.out.println("error: please select one of the below options");
         }
@@ -298,5 +300,54 @@ public class Main {
         } else if (quit == 2) {
             menu = true;
         }
+    }
+    
+    /**
+     * press 8 and see what happens :)
+     */
+    public static void easterEgg() {
+        System.out.println("                                        ,   ,  ");
+        System.out.println("                                        $,  $,     ,            ");
+        System.out.println("                                        \"ss.$ss. .s'     ");
+        System.out.println("                                ,     .ss$$$$$$$$$$s,              ");
+        System.out.println("                                $. s$$$$$$$$$$$$$$`$$Ss       ");
+        System.out.println("                                \"$$$$$$$$$$$$$$$$$$o$$$       ,       ");
+        System.out.println("                               s$$$$$$$$$$$$$$$$$$$$$$$$s,  ,s  ");
+        System.out.println("                              s$$$$$$$$$\"$$$$$$\"\"$$$$$$\"$$$$$,     ");
+        System.out.println("                              s$$$$$$$$$$s\"\"$$$$ssssss\"$$$$$$$$\"   ");
+        System.out.println("                             s$$$$$$$$$$'         `\"\"\"ss\"$\"$s\"\"      ");
+        System.out.println("                             s$$$$$$$$$$,              `\"\"\"\"\"$  .s$$s");
+        System.out.println("                             s$$$$$$$$$$$$s,...               `s$$'  `");
+        System.out.println("                         `ssss$$$$$$$$$$$$$$$$$$$$####s.     .$$\"$.   , s-");
+        System.out.println("                           `\"\"\"\"$$$$$$$$$$$$$$$$$$$$#####$$$$$$\"     $.$'");
+        System.out.println("                                 \"$$$$$$$$$$$$$$$$$$$$$####s\"\"     .$$$|");
+        System.out.println("                                  \"$$$$$$$$$$$$$$$$$$$$$$$$##s    .$$\" $ ");
+        System.out.println("                                   $$\"\"$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\"   `");
+        System.out.println("                                  $$\"  \"$\"$$$$$$$$$$$$$$$$$$$$S\"\"\"\"' ");
+        System.out.println("                             ,   ,\"     '  $$$$$$$$$$$$$$$$####s  ");
+        System.out.println("                             $.          .s$$$$$$$$$$$$$$$$$####\"");
+        System.out.println("                 ,           \"$s.   ..ssS$$$$$$$$$$$$$$$$$$$####\"");
+        System.out.println("                 $           .$$$S$$$$$$$$$$$$$$$$$$$$$$$$#####\"");
+        System.out.println("                 Ss     ..sS$$$$$$$$$$$$$$$$$$$$$$$$$$$######\"\"");
+        System.out.println("                  \"$$sS$$$$$$$$$$$$$$$$$$$$$$$$$$$########\"");
+        System.out.println("           ,      s$$$$$$$$$$$$$$$$$$$$$$$$#########\"\"'");
+        System.out.println("           $    s$$$$$$$$$$$$$$$$$$$$$#######\"\"'      s'         ,");
+        System.out.println("           $$..$$$$$$$$$$$$$$$$$$######\"'       ....,$$....    ,$");
+        System.out.println("            \"$$$$$$$$$$$$$$$######\"' ,     .sS$$$$$$$$$$$$$$$$s$$");
+        System.out.println("              $$$$$$$$$$$$#####\"     $, .s$$$$$$$$$$$$$$$$$$$$$$$$s.");
+        System.out.println("   )          $$$$$$$$$$$#####'      `$$$$$$$$$###########$$$$$$$$$$$.");
+        System.out.println("  ((          $$$$$$$$$$$#####       $$$$$$$$###\"       \"####$$$$$$$$$$ ");
+        System.out.println("  ) \\         $$$$$$$$$$$$####.     $$$$$$###\"             \"###$$$$$$$$$   s'");
+        System.out.println(" (   )        $$$$$$$$$$$$$####.   $$$$$###\"                ####$$$$$$$$s$$'");
+        System.out.println(" )  ( (       $$\"$$$$$$$$$$$#####.$$$$$###' -Mingze Jin .###$$$$$$$$$$\"");
+        System.out.println(" (  )  )   _,$\"   $$$$$$$$$$$$######.$$##'                .###$$$$$$$$$$");
+        System.out.println(" ) (  ( \\.         \"$$$$$$$$$$$$$#######,,,.          ..####$$$$$$$$$$$\"");
+        System.out.println("(   )$ )  )        ,$$$$$$$$$$$$$$$$$$####################$$$$$$$$$$$\"        ");
+        System.out.println("(   ($$  ( \\     _sS\"  `\"$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$S$$,       ");
+        System.out.println(" )  )$$$s ) )  .      .   `$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\"'  `$$   ");
+        System.out.println("  (   $$$Ss/  .$,    .$,,s$$$$$$##S$$$$$$$$$$$$$$$$$$$$$$$$S\"\"        ' ");
+        System.out.println("    \\)_$$$$$$$$$$$$$$$$$$$$$$$##\"  $$        `$$.        `$$.");
+        System.out.println("        `\"S$$$$$$$$$$$$$$$$$#\"      $          `$          `$");
+        System.out.println("            `\"\"\"\"\"\"\"\"\"\"\"\"\"'         '           '           '");
     }
 }
