@@ -9,6 +9,11 @@ import java.util.Arrays;
  * ver 1.0
  */
 public class Main {
+    public static void main(String[] args) {
+        infoAboutTeacherAndClass();
+        menuRunning();
+    }
+    
     static String names[];
     static int studentNum[];
     static int remove[];
@@ -17,9 +22,13 @@ public class Main {
     static int numMarks;
     static int classSize;
     static int[][] marks;
-    static int choice;
+    static int choiceMenu;
     static boolean menu;
-    public static void main(String[] args) {
+    
+    /**
+     * Allows user to input information about class, such as student names, number of students, student IDs, and the number of marks that will be submitted in the class.
+     */
+    public static void infoAboutTeacherAndClass() {
         Scanner input = new Scanner(System.in);
 
         System.out.print("What's your name? ");
@@ -70,8 +79,6 @@ public class Main {
         numMarks = input.nextInt();
 
         marks = new int[classSize + 1][numMarks];
-
-        menuRunning();
     }
 
     /**
@@ -91,7 +98,7 @@ public class Main {
             System.out.println("6 - Remove students");
             System.out.println("7 - Quit");
 
-            choice = input.nextInt();
+            choiceMenu = input.nextInt();
 
             menuFunctions();
         }
@@ -102,19 +109,19 @@ public class Main {
      */
     public static void menuFunctions() {
         Scanner input = new Scanner(System.in);
-        if (choice == 1) {
+        if (choiceMenu == 1) {
             printClassList();
-        } else if (choice == 2) {
+        } else if (choiceMenu == 2) {
             printClassMarks();
-        } else if (choice == 3) {
+        } else if (choiceMenu == 3) {
             printClassLogins();
-        } else if (choice == 4) {
+        } else if (choiceMenu == 4) {
             printAtRiskStudents();
-        } else if (choice == 5) {
+        } else if (choiceMenu == 5) {
             addMarks();
-        } else if (choice == 6) {
+        } else if (choiceMenu == 6) {
             removeStudents();
-        } else if (choice == 7) {
+        } else if (choiceMenu == 7) {
             quitProgram();
         } else {
             System.out.println("error: please select one of the below options");
